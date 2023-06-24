@@ -21,9 +21,9 @@ function App() {
         </div>
       </div>
       <div className=" bg-zinc-800 text-emerald-500 py-4 flex justify-between px-5">
-        <div>GitHub</div>
+        <a href="https://github.com/Nawaksam/team-generator">GitHub</a>
         <div>#CodeBakery</div>
-        <div>🄯Nawaksam</div>
+        <a href="https://www.linkedin.com/in/cdnsamuel/">🄯Nawaksam</a>
       </div>
     </div>
   )
