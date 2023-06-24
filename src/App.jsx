@@ -13,7 +13,7 @@ function App() {
       <h1 className=" bg-zinc-800 text-emerald-500 py-4 text-center text-4xl">
         Team Generator
       </h1>
-      <div className="bg-zinc-700 flex  flex-row flex-grow p-4 gap-4">
+      <div className="bg-zinc-700 flex  sm:flex-row flex-col flex-grow p-3 gap-3">
         <List onChange={setUsers} list={users} />
         <div className=" bg-zinc-800 flex-grow flex flex-col gap-4 p-3 rounded-lg">
           <RandomPicker list={users} />

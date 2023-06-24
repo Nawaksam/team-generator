@@ -21,8 +21,8 @@ function RandomPicker({ list }) {
   return (
     <div className="bg-zinc-700 text-emerald-500 flex flex-col  p-1 rounded-lg">
       <div className="bg-zinc-800 rounded-lg">
-        <div className="flex items-center gap-2 m-2 pb-2 border-b-2 border-b-zinc-700">
-          <p>Choisis le nombre de victimes:</p>
+        <div className="flex sm:flex-row flex-col items-center gap-2 m-2 pb-2 border-b-2 border-b-zinc-700">
+          <p className="sm:pb-0 pb-1">Choisis le nombre de victimes:</p>
           <form className="flex gap-2">
             <input
               className=" w-10 text-center bg-zinc-400 text-zinc-950 rounded-lg p-1"
@@ -43,7 +43,7 @@ function RandomPicker({ list }) {
         </div>
       </div>
       {randomUsers ? (
-        <ul className="bg-zinc-800 flex flex-wrap">
+        <ul className="bg-zinc-800 flex sm:justify-start justify-center flex-wrap">
           {randomUsers.map((user) => (
             <li
               key={user.id}
