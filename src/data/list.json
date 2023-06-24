@@ -1,0 +1,20 @@
+[
+    {"id": 100,"name":"Ayoub","rank":"instructor","isChecked":false},
+    {"id": 101,"name":"Loris","rank":"instructor","isChecked":false},
+    {"id": 1,"name":"Adrien","rank":"student", "isChecked":true},
+    {"id": 2,"name":"Anaïs","rank":"student", "isChecked":true},
+    {"id": 3,"name":"Annie", "rank":"student","isChecked":true},
+    {"id": 4,"name":"Claire","rank":"student", "isChecked":true},
+    {"id": 5,"name":"Cédric", "rank":"student","isChecked":true},
+    {"id": 6,"name":"Damien", "rank":"student","isChecked":true},
+    {"id": 7,"name":"David", "rank":"student","isChecked":true},
+    {"id": 8,"name":"Killian", "rank":"student","isChecked":true},
+    {"id": 9,"name":"Laurène", "rank":"student","isChecked":true},
+    {"id": 10,"name":"Marvin", "rank":"student","isChecked":true},
+    {"id": 11,"name":"Michael","rank":"student", "isChecked":true},
+    {"id": 12,"name":"Nicolas","rank":"student", "isChecked":true},
+    {"id": 13,"name":"Outman","rank":"student", "isChecked":true},
+    {"id": 14,"name":"Samuel","rank":"student", "isChecked":true},
+    {"id": 15,"name":"Thibaut","rank":"student", "isChecked":true},
+    {"id": 16,"name":"Tristan","rank":"student", "isChecked":true}
+]
