@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import List from "./components/List"
 import RandomPicker from "./components/RandomPicker"
@@ -6,7 +6,14 @@ import RandomTeam from "./components/RandomTeam"
 import list from "./data/list.json"
 
 function App() {
-  const [users, setUsers] = useState(list)
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    setUsers(JSON.parse(localStorage.getItem("list")) || list)
+  }, [])
+
+  console.log("App Users")
+  console.log(users)
 
   return (
     <div className="h-screen flex flex-col">
@@ -14,7 +21,7 @@ function App() {
         Team Generator
       </h1>
       <div className="bg-zinc-700 flex  sm:flex-row flex-col flex-grow p-3 gap-3">
-        <List onChange={setUsers} list={users} />
+        <List onChange={setUsers} list={users} reset={list} />
         <div className=" bg-zinc-800 flex-grow flex flex-col gap-4 p-3 rounded-lg">
           <RandomPicker list={users} />
           <RandomTeam list={users} />

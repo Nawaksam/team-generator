@@ -37,7 +37,7 @@ function RandomTeam({ list }) {
               onChange={(e) => setNumberTeams(e.target.value)}
             />
             <button
-              className="bg-zinc-400 text-zinc-950 hover:bg-emerald-500 rounded-lg p-1"
+              className="bg-zinc-400 text-zinc-950 hover:bg-emerald-500 rounded-lg py-1 px-2"
               type="submit"
               onClick={handleTeams}
             >
@@ -50,7 +50,7 @@ function RandomTeam({ list }) {
             <ul className="bg-zinc-700 flex rounded-lg" key={index}>
               <div className="bg-zinc-800 m-1 px-8 flex flex-col justify-center rounded-lg">
                 {team.map((user, index) => (
-                  <li className="p-2" key={index}>
+                  <li className="p-2 hover:text-zinc-400" key={index}>
                     {user.name}
                   </li>
                 ))}
