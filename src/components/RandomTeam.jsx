@@ -29,10 +29,10 @@ function RandomTeam({ list }) {
           <div>Choisis le nombre d'équipes:</div>
           <form className="flex gap-2">
             <input
-              className=" w-10 text-center bg-zinc-400 text-zinc-950 rounded-lg p-1"
+              className=" w-10 text-center bg-zinc-400 text-zinc-950 rounded-lg p-1 active:border-red-700 active:border-none"
               type="number"
               min="2"
-              max={list.filter((user) => user.isChecked).length / 2}
+              max={Math.ceil(list.filter((user) => user.isChecked).length / 2)}
               name="picker"
               onChange={(e) => setNumberTeams(e.target.value)}
             />
