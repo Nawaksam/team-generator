@@ -1,0 +1,10 @@
+FROM node:alpine AS build
+WORKDIR /client
+COPY package.json .
+RUN npm install -g npm@9.7.2
+RUN npm i
+COPY . .
+RUN npm run build
+
+FROM nginx
+COPY --from=build /client/build /usr/share/ngninx/html
