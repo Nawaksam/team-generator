@@ -43,33 +43,29 @@ function List({ onChange, list, reset }) {
   const handleAdding = () => {
     setAdding(!adding)
   }
-
-  useEffect(() => {
-    setNewId(getHighestId(list) + 1)
-  }, [handleAdding])
-
   const handleAddUser = (e) => {
     e.preventDefault()
+
     if (input.trim() === "") {
       return
     }
+    setNewId(getHighestId(list) + 1)
     const user = {
       id: newId,
       name: input,
       isChecked: true,
     }
-    console.log(user)
     const newList = [...list, user]
     onChange(newList)
     localStorage.setItem("list", JSON.stringify(newList))
     setInput("")
     setNewId(newId + 1)
   }
-  console.log(input)
+
   return (
     <div className="bg-zinc-800 text-emerald-500 p-4 h-max select-none rounded-lg">
       <div>
-        <div className="flex justify-between gap-2 border-b-2 border-b-emerald-700 mb-2 pb-1">
+        <div className="flex justify-between gap-2 border-b-2 border-b-emerald-700 px-2 mb-2 pb-1">
           <div className="flex gap-3 my-1">
             <input
               type="checkbox"
@@ -80,7 +76,7 @@ function List({ onChange, list, reset }) {
               }
               onChange={handleUsers}
             />
-            <label className="text-xl " htmlFor="crew">
+            <label className="text-xl" htmlFor="crew">
               Crew
             </label>
           </div>
@@ -94,8 +90,11 @@ function List({ onChange, list, reset }) {
         </div>
         <div className="">
           {list.map((user) => (
-            <div className="flex justify-between" key={user.id}>
-              <div className="flex gap-3 my-1">
+            <div
+              className="flex justify-between hover:bg-emerald-500 hover:text-zinc-950 px-2 py-0.5 rounded-lg"
+              key={user.id}
+            >
+              <div className="flex gap-3 my-1 ">
                 <input
                   type="checkbox"
                   id={user.id}

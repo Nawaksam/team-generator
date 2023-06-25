@@ -23,7 +23,7 @@ function RandomTeam({ list }) {
     }
   }
   return (
-    <div className="bg-zinc-700 flex-grow flex rounded-lg ">
+    <div className="bg-zinc-700 flex-grow flex rounded-lg">
       <div className="bg-zinc-800 text-emerald-500 flex-grow m-1 p-2 rounded-lg">
         <div className="flex sm:flex-row flex-col items-center gap-2 pb-2 border-b-2 border-b-zinc-700">
           <div>Choisis le nombre d'équipes:</div>
