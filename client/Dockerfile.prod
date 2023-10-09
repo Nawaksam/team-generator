@@ -1,10 +1,19 @@
-FROM node:alpine AS build
-WORKDIR /client
-COPY package.json .
-RUN npm install -g npm@9.7.2
+FROM node:20 AS build
+
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+COPY ./client /usr/src/app/
+
+RUN npm install -g npm@10.2.0
 RUN npm i
-COPY . .
 RUN npm run build
 
-FROM nginx
-COPY --from=build /client/build /usr/share/ngninx/html
+FROM nginx:1.25.2
+COPY --from=build /client/dist /usr/share/ngninx/html
+COPY ./client/default.conf /etc/nginx/conf.d/
+EXPOSE 4000
+
+CMD ["nginx", "-g", "daemon off;"]
