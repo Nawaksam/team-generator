@@ -24,7 +24,7 @@ function RandomTeam({ list }) {
   }
   return (
     <div className="bg-zinc-700 flex-grow flex rounded-lg">
-      <div className="bg-zinc-800 text-emerald-500 flex-grow m-1 p-2 rounded-lg">
+      <div className="bg-zinc-800 text-emerald-500 flex flex-col flex-grow m-1 p-2 rounded-lg">
         <div className="flex sm:flex-row flex-col items-center gap-2 pb-2 border-b-2 border-b-zinc-700">
           <div>Choisis le nombre d'équipes:</div>
           <form className="flex gap-2">
@@ -41,22 +41,31 @@ function RandomTeam({ list }) {
               type="submit"
               onClick={handleTeams}
             >
-              Et bim !
+              C'est la guerre !
             </button>
           </form>
         </div>
-        <div className="flex justify-center flex-wrap mt-10 gap-10 ">
-          {teams.map((team, index) => (
-            <ul className="bg-zinc-700 flex rounded-lg" key={index}>
-              <div className="bg-zinc-800 m-1 px-8 flex flex-col justify-center rounded-lg">
-                {team.map((user, index) => (
-                  <li className="p-2 hover:text-zinc-400" key={index}>
-                    {user.name}
-                  </li>
-                ))}
-              </div>
-            </ul>
-          ))}
+        <div className="flex flex-grow flex-col justify-between">
+          <div className="flex justify-center flex-wrap mt-10 gap-10 ">
+            {teams.map((team, index) => (
+              <ul className="bg-zinc-700 flex rounded-lg" key={index}>
+                <div className="bg-zinc-800 m-1 px-8 flex flex-col justify-center rounded-lg">
+                  {team.map((user, index) => (
+                    <li className="p-2 hover:text-zinc-400" key={index}>
+                      {user.name}
+                    </li>
+                  ))}
+                </div>
+              </ul>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <img
+              src="/baked.png"
+              alt="Baked with love"
+              className=" h-40 sm:py-0 py-2 "
+            />
+          </div>
         </div>
       </div>
     </div>
